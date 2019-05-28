@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 export default class HelloWorld extends React.Component {
     render() {
-        return <div>;)</div>
+        return <div>;);)</div>
     }
 }
 
-ReactDOM.render(<HelloWorld/>, document.getElementById('helloWorld'));
+ReactDOM.render(<HelloWorld/>, document.getElementById("container"));

@@ -1,6 +1,15 @@
+const path = require('path');
+
 module.exports = {
+    mode: 'development',
     entry: './app.js',
-    output: { path: __dirname, filename: 'bundle.js' },
+    output: {
+        path: path.join(__dirname, '../src/main/resources/static/'),
+        filename: 'app.js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, '../src/main/resources/static/'),
+    },
     module: {
         rules: [
             {
