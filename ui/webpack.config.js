@@ -21,21 +21,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader'
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             },
             {
-                test: /\.png$/,
-                loader: "url-loader?limit=100000"
-            },
-            {
-                test: /\.jpg$/,
-                loader: "file-loader"
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=1024&name=glyphicons/[name].[ext]'
-            },
+                test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+            //    include: ASSETS_FOLDER,
+                loader: 'file-loader?name=assets/[name].[ext]'
+            }
         ]
     },
 };
