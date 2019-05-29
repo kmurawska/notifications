@@ -22,14 +22,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
+                loader: 'style-loader!css-loader'
             },
             {
                 test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-            //    include: ASSETS_FOLDER,
                 loader: 'file-loader?name=assets/[name].[ext]'
             }
         ]
