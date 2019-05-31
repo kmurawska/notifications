@@ -9,6 +9,7 @@ class NotificationsStore {
 
     initNotifications() {
         this.state.notifications.unshift({
+            id: 1234,
             level: 'INFO',
             message: 'message'
         });

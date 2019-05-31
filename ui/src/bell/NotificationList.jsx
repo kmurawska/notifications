@@ -1,22 +1,22 @@
 import React from 'react';
-import Typography from "@material-ui/core/es/Typography/Typography";
+import {notificationStore} from "./NotificationsStore";
+import Notification from "./Notification.jsx";
+import EmptyNotificationList from "./EmptyNotificationList.jsx";
 
 export default class NotificationList extends React.Component {
     constructor(props) {
         super(props);
+        notificationStore.registerStateAwareComponent(this);
     }
 
     render() {
         if (this.props.isEmpty) {
-            return <div className='notification' style={{textAlign: 'center'}}>
-                <Typography variant="subtitle2" style={{padding: '5px'}}>Nothing to display...</Typography>
-            </div>
+            return <EmptyNotificationList/>
         }
 
         return (
             <div>
-                <Typography variant="subtitle2" style={{padding: '5px'}}>Notification 1</Typography>
-                <Typography variant="subtitle2" style={{padding: '5px'}}>Notification 2</Typography>
+                {this.state.notifications.map(n => <Notification key={n.id} notification={n}/>)}
             </div>
         )
     }
