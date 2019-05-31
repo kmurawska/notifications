@@ -32,14 +32,13 @@ export default class NotificationBell extends React.Component {
                          onClose={this.onClose}
                          anchorOrigin={{vertical: 'center', horizontal: 'right'}}
                          transformOrigin={{vertical: 'top', horizontal: 'left'}}>
-                    <NotificationContainer isEmpty={this.state.isEmpty}/>
+                    <NotificationContainer/>
                 </Popover>
             </div>
         )
     }
 
     onClick(event) {
-        notificationStore.refreshStateAwareComponents();
         this.setState({
             isOpen: true,
             anchor: event.currentTarget

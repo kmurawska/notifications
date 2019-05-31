@@ -4,6 +4,14 @@ class NotificationsStore {
         this.state = {
             notifications: []
         };
+        this.initNotifications();
+    }
+
+    initNotifications() {
+        this.state.notifications.unshift({
+            level: 'INFO',
+            message: 'message'
+        });
     }
 
     registerStateAwareComponent(component) {
