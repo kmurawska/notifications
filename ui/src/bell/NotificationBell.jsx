@@ -3,20 +3,24 @@ import Notifications from "@material-ui/icons/Notifications";
 import Badge from "@material-ui/core/es/Badge/Badge";
 import Popover from "@material-ui/core/es/Popover/Popover";
 import NotificationContainer from "./NotificationContainer.jsx";
+import { notificationStore } from "./NotificationsStore.js";
 
 export default class NotificationBell extends React.Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
         this.onClose = this.onClose.bind(this);
-        this.state = {
-            isOpen: false,
-            anchor: null,
-            isEmpty: false
-        };
+        notificationStore.registerStateAwareComponent(this);
+        this.initInternalComponentState();
+    }
+
+    initInternalComponentState() {
+        this.state['isOpen'] = false;
+        this.state['anchor'] = null;
     }
 
     render() {
+        console.log(this.state)
         return (
             <div>
                 <a style={{cursor: "pointer"}} className="no-right-padding" onClick={this.onClick}>
@@ -29,23 +33,25 @@ export default class NotificationBell extends React.Component {
                          onClose={this.onClose}
                          anchorOrigin={{vertical: 'center', horizontal: 'right'}}
                          transformOrigin={{vertical: 'top', horizontal: 'left'}}>
-                        <NotificationContainer isEmpty={this.state.isEmpty}/>
+                    <NotificationContainer isEmpty={this.state.isEmpty}/>
                 </Popover>
             </div>
         )
     }
 
     onClick(event) {
-        this.setState({
-            isOpen: true,
-            anchor: event.currentTarget
-        });
+        notificationStore.refreshStateAwareComponents();
+        //  this.setState(this.store.open(event));
+        /*    this.setState({
+                isOpen: true,
+                anchor: event.currentTarget
+            });*/
     }
 
     onClose() {
-        this.setState({
-            isOpen: false,
-            anchor: null
-        });
+        /*  this.setState({
+              isOpen: false,
+              anchor: null
+          });*/
     }
 }
