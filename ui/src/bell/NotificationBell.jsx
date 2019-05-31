@@ -3,7 +3,7 @@ import Notifications from "@material-ui/icons/Notifications";
 import Badge from "@material-ui/core/es/Badge/Badge";
 import Popover from "@material-ui/core/es/Popover/Popover";
 import NotificationContainer from "./NotificationContainer.jsx";
-import { notificationStore } from "./NotificationsStore.js";
+import {notificationStore} from "./NotificationsStore.js";
 
 export default class NotificationBell extends React.Component {
     constructor(props) {
@@ -20,7 +20,6 @@ export default class NotificationBell extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <a style={{cursor: "pointer"}} className="no-right-padding" onClick={this.onClick}>
@@ -41,17 +40,16 @@ export default class NotificationBell extends React.Component {
 
     onClick(event) {
         notificationStore.refreshStateAwareComponents();
-        //  this.setState(this.store.open(event));
-        /*    this.setState({
-                isOpen: true,
-                anchor: event.currentTarget
-            });*/
+        this.setState({
+            isOpen: true,
+            anchor: event.currentTarget
+        });
     }
 
     onClose() {
-        /*  this.setState({
-              isOpen: false,
-              anchor: null
-          });*/
+        this.setState({
+            isOpen: false,
+            anchor: null
+        });
     }
 }
