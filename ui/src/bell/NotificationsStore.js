@@ -10,8 +10,8 @@ class NotificationsStore {
     initNotifications() {
         this.state.notifications.unshift({
             id: 1234,
-            level: 'INFO',
-            message: 'message'
+            level: 'ERROR',
+            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.'
         });
     }
 
