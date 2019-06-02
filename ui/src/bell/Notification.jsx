@@ -12,15 +12,15 @@ export default class Notification extends React.Component {
     }
 
     render() {
-        return <SnackbarContent style={{backgroundColor: 'white', color: 'black', margin: '15px'}}
-                                message={
-                                    <NotificationMessage notification={this.props.notification}/>
-                                }
-                                action={[
-                                    <IconButton key="close" aria-label="Close" color="inherit" onClick={() => this.markAsRead()}>
-                                        <CloseIcon/>
-                                    </IconButton>
-                                ]}
+        return <SnackbarContent
+            message={
+                <NotificationMessage notification={this.props.notification}/>
+            }
+            action={[
+                <IconButton key="close" aria-label="Close" color="inherit" onClick={() => this.markAsRead()}>
+                    <CloseIcon/>
+                </IconButton>
+            ]}
         />
     };
 

@@ -16,7 +16,7 @@ export default class NotificationMessage extends React.Component {
                         <NotificationIcon level={this.props.notification.level}/>
                     </Grid>
                 </div>
-                <Grid item xs style={{width: '300px'}}>
+                <Grid item xs style={{ maxWidth: '300px'}}>
                     <Typography>{this.props.notification.message}</Typography>
                 </Grid>
             </Grid>
