@@ -18,7 +18,7 @@ export default class Notification extends React.Component {
             }
             action={[
                 <IconButton key="close" aria-label="Close" color="inherit" onClick={() => this.markAsRead()}>
-                    <CloseIcon/>
+                    <CloseIcon style={{fontSize: '10px'}}/>
                 </IconButton>
             ]}
         />

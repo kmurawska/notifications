@@ -9,15 +9,15 @@ export default class NotificationMessage extends React.Component {
     }
 
     render() {
-        return <div style={{flexGrow: 1, overflow: 'hidden'}}>
+        return <div style={{flexGrow: 1}}>
             <Grid container wrap="nowrap" spacing={2}>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <Grid item style={{marginLeft: '10px'}}>
+                    <Grid item xs>
                         <NotificationIcon level={this.props.notification.level}/>
                     </Grid>
                 </div>
-                <Grid item xs style={{ maxWidth: '300px'}}>
-                    <Typography>{this.props.notification.message}</Typography>
+                <Grid item xs style={{maxWidth: '300px'}}>
+                    <Typography variant="body2">{this.props.notification.message}</Typography>
                 </Grid>
             </Grid>
         </div>
