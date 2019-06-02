@@ -11,17 +11,20 @@ class NotificationsStore {
         this.state.notifications.unshift({
             id: 1,
             level: 'INFO',
-            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.'
+            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.',
+            whenRecorded: '2014-02-27T23:03:14+05:30'
         });
         this.state.notifications.unshift({
             id: 2,
             level: 'WARNING',
-            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.'
+            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.',
+            whenRecorded: '2014-02-27T23:03:14+05:30'
         });
         this.state.notifications.unshift({
             id: 3,
             level: 'ERROR',
-            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.'
+            message: 'Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.',
+            whenRecorded: '2014-02-27T23:03:14+05:30'
         });
     }
 

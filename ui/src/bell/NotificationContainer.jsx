@@ -12,7 +12,7 @@ export default class NotificationContainer extends React.Component {
 
     render() {
         return <div style={{width: '350px', minHeight: '100px'}}>
-            <Typography variant="h6" style={{textAlign: 'center', marginTop: '15px'}}>Notifications</Typography>
+            <Typography variant="body1" style={{textAlign: 'center', marginTop: '15px'}}>Notifications</Typography>
             <Divider variant="middle" light={false}/>
             <NotificationList isEmpty={notificationStore.isEmpty()}/>
         </div>

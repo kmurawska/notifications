@@ -20,15 +20,16 @@ export default createMuiTheme({
         },
         MuiDivider: {
             root: {
-                marginTop: '10px',
-                marginBottom: '10px'
+                marginTop: '2%',
+                marginBottom: '3%'
             }
         },
         MuiSnackbarContent: {
             root: {
                 backgroundColor: `${defaultTheme.palette.type === 'light' ? defaultTheme.palette.grey[200] : defaultTheme.palette.grey[900]}`,
                 color: `${defaultTheme.palette.text.primary}`,
-                margin: '15px'
+                margin: '2%',
+                paddingLeft: "0"
             },
             action: {
                 marginTop: '-40%',

@@ -3,7 +3,7 @@ import SnackbarContent from "@material-ui/core/es/SnackbarContent/SnackbarConten
 import IconButton from "@material-ui/core/es/IconButton/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import NotificationMessage from "./NotificationMessage.jsx";
-import {notificationStore} from "./NotificationsStore";
+import {notificationStore} from "../NotificationsStore";
 
 export default class Notification extends React.Component {
     constructor(props) {
