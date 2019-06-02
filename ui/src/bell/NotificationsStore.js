@@ -45,6 +45,11 @@ class NotificationsStore {
     isEmpty() {
         return this.state.notifications.length === 0;
     }
+
+    markAsRead(notification) {
+        this.state.notifications = this.state.notifications.filter(n => n !== notification);
+        this.refreshStateAwareComponents();
+    }
 }
 
 export let notificationStore = new NotificationsStore();

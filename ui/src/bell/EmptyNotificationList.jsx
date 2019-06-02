@@ -10,7 +10,5 @@ export default class EmptyNotificationList extends React.Component {
         return <div className='notification' style={{textAlign: 'center'}}>
             <Typography variant="subtitle2" style={{padding: '5px'}}>Nothing to display...</Typography>
         </div>
-
-
     }
 }

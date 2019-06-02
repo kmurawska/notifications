@@ -1,7 +1,7 @@
 import React from 'react';
 import {notificationStore} from "./NotificationsStore";
-import Notification from "./Notification.jsx";
 import EmptyNotificationList from "./EmptyNotificationList.jsx";
+import Notification from "./Notification.jsx";
 
 export default class NotificationList extends React.Component {
     constructor(props) {
