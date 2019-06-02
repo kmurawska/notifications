@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from "@material-ui/core/es/Grid/Grid";
 import NotificationIcon from "./NotificationIcon.jsx";
 import Typography from "@material-ui/core/es/Typography/Typography";
+import {notificationStore} from "./NotificationsStore";
 
 export default class NotificationMessage extends React.Component {
     constructor(props) {

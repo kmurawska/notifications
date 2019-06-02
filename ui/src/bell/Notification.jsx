@@ -27,4 +27,8 @@ export default class Notification extends React.Component {
     markAsRead() {
         notificationStore.markAsRead(this.props.notification);
     }
+
+    componentWillUnmount() {
+        notificationStore.unregisterStateAwareComponent(this);
+    }
 }

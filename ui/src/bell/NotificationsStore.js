@@ -31,7 +31,7 @@ class NotificationsStore {
     }
 
     unregisterStateAwareComponent(component) {
-        this.subscriber = this.subscriber.filter((c) => {
+        this.stateAwareComponents = this.stateAwareComponents.filter((c) => {
             if (c !== component) {
                 return c;
             }

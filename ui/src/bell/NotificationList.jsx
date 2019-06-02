@@ -20,4 +20,8 @@ export default class NotificationList extends React.Component {
             </div>
         )
     }
+
+    componentWillUnmount() {
+        notificationStore.unregisterStateAwareComponent(this);
+    }
 }

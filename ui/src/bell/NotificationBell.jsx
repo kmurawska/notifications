@@ -51,4 +51,8 @@ export default class NotificationBell extends React.Component {
             anchor: null
         });
     }
+
+    componentWillUnmount() {
+        notificationStore.unregisterStateAwareComponent(this);
+    }
 }
