@@ -17,4 +17,8 @@ export default class NotificationContainer extends React.Component {
             <NotificationList isEmpty={notificationStore.isEmpty()}/>
         </div>
     }
+
+    componentWillUnmount() {
+        notificationStore.unregisterStateAwareComponent(this);
+    }
 }
