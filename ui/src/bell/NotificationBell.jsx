@@ -23,7 +23,7 @@ export default class NotificationBell extends React.Component {
         return (
             <div>
                 <a style={{cursor: "pointer"}} className="no-right-padding" onClick={this.onClick}>
-                    <Badge badgeContent={4} color="primary">
+                    <Badge badgeContent={notificationStore.numberOfNotifications()} color="primary">
                         <Notifications/>
                     </Badge>
                 </a>

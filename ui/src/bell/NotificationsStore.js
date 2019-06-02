@@ -42,6 +42,10 @@ class NotificationsStore {
         return newState;
     }
 
+    numberOfNotifications() {
+        return this.state.notifications.length;
+    }
+
     isEmpty() {
         return this.state.notifications.length === 0;
     }
