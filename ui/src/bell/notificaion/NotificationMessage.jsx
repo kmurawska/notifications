@@ -19,7 +19,7 @@ export default class NotificationMessage extends React.Component {
                 </div>
                 <Grid item xs style={{maxWidth: '300px'}}>
                     <Typography variant="body2">{this.props.notification.message}</Typography>
-                    <div>
+                    <div style={{marginRight: '-15%'}}>
                         <WhenRecorded recordedAt={this.props.notification.whenRecorded}/>
                     </div>
                 </Grid>

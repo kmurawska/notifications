@@ -26,7 +26,9 @@ public class NotificationController {
 
     @GetMapping("/test-notification")
     public void send() {
-        notificationService.send(new Notification(Level.INFO, UUID.randomUUID().toString()));
+        Notification notification = new Notification(Level.INFO, UUID.randomUUID().toString());
+        Notification notification2 = new Notification(Level.ERROR, "Truncation should be conditionally applicable on this long line of text as this is a much longer line than what the container can support.");
+        notificationService.publish(notification);
+        notificationService.publish(notification2);
     }
-
 }

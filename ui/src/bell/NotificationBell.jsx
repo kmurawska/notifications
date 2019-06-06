@@ -12,19 +12,11 @@ export default class NotificationBell extends React.Component {
         this.onClose = this.onClose.bind(this);
         notificationStore.registerStateAwareComponent(this);
         this.initInternalComponentState();
-        this.test();
     }
 
     initInternalComponentState() {
         this.state['isOpen'] = false;
         this.state['anchor'] = null;
-    }
-
-    test() {
-        let webSocket = new WebSocket("ws://localhost:8081/myHandler");
-        webSocket.onmessage = function (event) {
-            console.log(event);
-        };
     }
 
     render() {

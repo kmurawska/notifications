@@ -16,7 +16,7 @@ export default class NotificationList extends React.Component {
 
         return (
             <div>
-                {this.state.notifications.map(n => <Notification key={n.id} notification={n}/>)}
+                {this.state.notifications.map(n => <Notification key={n.uuid} notification={n}/>)}
             </div>
         )
     }

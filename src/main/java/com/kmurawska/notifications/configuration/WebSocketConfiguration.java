@@ -17,11 +17,11 @@ public class WebSocketConfiguration implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(myHandler(), "/myHandler").setAllowedOrigins("*");
+        registry.addHandler(notificationChannel(), "/notification-channel").setAllowedOrigins("*");
     }
 
     @Bean
-    public NotificationChannel myHandler() {
+    public NotificationChannel notificationChannel() {
         return new NotificationChannel();
     }
 

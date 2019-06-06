@@ -11,7 +11,7 @@ public class NotificationService {
         this.notificationChannel = notificationChannel;
     }
 
-    public void send(Notification notification) {
-        notificationChannel.broadcastToClients(notification);
+    public void publish(Notification notification) {
+        notificationChannel.publish(notification);
     }
 }

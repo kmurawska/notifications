@@ -21,7 +21,8 @@ export default createMuiTheme({
         MuiDivider: {
             root: {
                 marginTop: '2%',
-                marginBottom: '3%'
+                marginBottom: '3%',
+
             }
         },
         MuiSnackbarContent: {
@@ -29,11 +30,21 @@ export default createMuiTheme({
                 backgroundColor: `${defaultTheme.palette.type === 'light' ? defaultTheme.palette.grey[200] : defaultTheme.palette.grey[900]}`,
                 color: `${defaultTheme.palette.text.primary}`,
                 margin: '2%',
-                paddingLeft: "0"
+                paddingLeft: "0",
+                paddingRight: "0",
+                width: '96%',
+                alignItems: 'flex-start'
+            },
+            message: {
+                width: '85%',
+                paddingTop: '0',
+                paddingBottom: '0',
             },
             action: {
-                marginTop: '-40%',
-                marginRight: '-8%'
+                "& button": {
+                    paddingTop: '0',
+                    paddingBottom: '0',
+                }
             }
         },
         MuiIconButton: {

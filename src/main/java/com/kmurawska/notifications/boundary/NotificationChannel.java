@@ -1,5 +1,6 @@
 package com.kmurawska.notifications.boundary;
 
+import com.google.gson.Gson;
 import com.kmurawska.notifications.control.Notification;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -21,19 +22,15 @@ public class NotificationChannel extends TextWebSocketHandler {
         sessions.add(session);
     }
 
-    @Override
-    public void handleTextMessage(WebSocketSession session, TextMessage message) {
-    }
-
-    public void broadcastToClients(Notification notification) {
+    public void publish(Notification notification) {
         sessions.forEach(s -> trySendTo(s, notification));
     }
 
     private void trySendTo(WebSocketSession session, Notification notification) {
         try {
-            session.sendMessage(new TextMessage(notification.toString()));
+            session.sendMessage(new TextMessage(new Gson().toJson(notification)));
         } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, "Unable to send notification to client", e);
+            LOGGER.log(Level.SEVERE, "Unable to publish notification to client", e);
             throw new RuntimeException(e);
         }
     }
