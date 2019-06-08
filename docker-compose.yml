@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  notificaion:
+    build: .
+    container_name: notifications
+    image: notifications
+    ports:
+      - 8081:8081
