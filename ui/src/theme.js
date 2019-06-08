@@ -36,7 +36,7 @@ export default createMuiTheme({
                 alignItems: 'flex-start'
             },
             message: {
-                width: '85%',
+                width: '87%',
                 paddingTop: '0',
                 paddingBottom: '0',
             },
